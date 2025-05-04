@@ -11,9 +11,10 @@ This repository includes all the files required for the final project of WFSC 59
     -   `full-invert-matrix-v3.csv`: invertebrate relative abundance matrix
     -   `full-taxonomy.csv`: taxonomic list of species
 -   **plots**: data visualization outputs
--   **scripts**: RMarkdown scripts and knitted output
+-   **scripts**: RMarkdown script of the project and knitted markdown output
 
 ## Weeks covered
+Guzman-DW-Final-Project.Rmd
 
 -   **Week 02**: Line 74
 -   **Week 03**: Line 59, 68-72, and throughout the RMarkdown file
