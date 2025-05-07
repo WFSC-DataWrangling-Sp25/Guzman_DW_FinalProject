@@ -1,7 +1,7 @@
 Data Wrangling 596 - Final Project
 ================
 Rocío Guzmán
-2025-05-02
+2025-05-06
 
 # General information
 
@@ -28,7 +28,7 @@ streams of 6 parks and samples from 2012-2022.
 3.  Rename columns
 4.  Transform to long-format
 5.  Join with taxonomy database
-6.  Plot richness and relative abundance for all taxa and for EPT taxa
+6.  Plot richness and relative abundance
 
 # Set-Up
 

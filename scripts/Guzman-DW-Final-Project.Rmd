@@ -24,7 +24,7 @@ The dataset is the result of long-term aquatic macroinvertebrates sampling perfo
 3.  Rename columns
 4.  Transform to long-format
 5.  Join with taxonomy database
-6.  Plot richness and relative abundance for all taxa and for EPT taxa
+6.  Plot richness and relative abundance
 
 # Set-Up
 
