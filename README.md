@@ -14,6 +14,7 @@ This repository includes all the files required for the final project of WFSC 59
 -   **scripts**: RMarkdown script of the project and knitted markdown output
 
 ## Weeks covered
+
 Guzman-DW-Final-Project.Rmd
 
 -   **Week 02**: Line 74
