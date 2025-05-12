@@ -1,5 +1,7 @@
 # Guzman_DW_FinalProject
 
+##### Caleb Milford commenting and reviewing Rocio's code. No Changes were made to the code just comments put in to their own code chunks 
+
 ## Summary
 
 This repository includes all the files required for the final project of WFSC 596B. The data was provided by the National Park Service and includes abundance data of aquatic invertebrates sampled in several Southwestern national parks throughout 2008-2024.
@@ -14,6 +16,7 @@ This repository includes all the files required for the final project of WFSC 59
 -   **scripts**: RMarkdown script of the project and knitted markdown output
 
 ## Weeks covered
+
 Guzman-DW-Final-Project.Rmd
 
 -   **Week 02**: Line 74

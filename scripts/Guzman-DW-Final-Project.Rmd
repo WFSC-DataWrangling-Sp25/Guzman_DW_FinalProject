@@ -76,6 +76,18 @@ data_0 <- data_0[ , colSums(data_0 != 0) > 0] # remove taxa with no counts
 head(data_0[ , c(1:7)]) # showing first rows of first 7 columns
 ```
 
+## *Review 1:*
+
+```{r}
+#Obviously you used base R to be able to use skills from week 2 but another way to do it in tidyverse could have been 
+
+#select(where(~ !is.numeric(.) || sum(.) > 0))
+
+#And then you could have added this directly into your pipe
+
+
+```
+
 Transforming to long-format (Week 06).
 
 ```{r}
@@ -120,6 +132,27 @@ write_csv(all_taxa, file = "../data_clean/invert_long_clean.csv")
 head(all_taxa)
 ```
 
+## *Review 2:*
+
+```{r}
+#The above code is great! Very well orgaized, and accomplished exactly what you want. A potential alternative way to go about it is what I'll put below. I don't think either is better. The biggest thing I have changed is not having to mutate so many times.
+
+# all_taxa <- taxa_join %>%
+#   group_by(site, year, Taxa) %>%
+#   summarise(
+#     rel_ab_recalc = sum(rel_abundance) / sum(rel_abundance, na.rm = TRUE), 
+#     sample = first(sample),
+#     habitat = first(habitat),
+#     Class = first(Class),
+#     Order = first(Order),
+#     .groups = "drop"
+#   ) %>%
+#   select(sample, site, year, habitat, Class, Order, Taxa, rel_ab_recalc) %>%
+#   rename(class = Class, order = Order, taxa = Taxa) %>%
+#   arrange(site, year)
+
+```
+
 # Analysis and plotting
 
 Creating color palette.
@@ -150,11 +183,34 @@ ggplot(data_0, aes(x = year)) +
   guides(fill = "none") # remove sites from legend
 ```
 
+## *Review 3:*
+
+```{r}
+#Love the above graphs and the colors. I think another fun one that could have given a similar picture of what you were trying to express (although I think you method is probably better) would have been to plot the abundnace of samples per year and overlaying the differnt site colors all on one graph.
+
+
+```
+
 ## Total taxonomic richness
 
 ```{r}
 # counting unique taxa in "taxa" column
 paste("Total richness:", length(unique(all_taxa$taxa))) 
+```
+
+## *Review 4:*
+
+```{r}
+#Here are two other possible ways of doing the same thing:
+
+#paste("Total richness:", n_distinct(all_taxa$taxa))
+
+#all_taxa %>%
+  # summarise(total_richness = n_distinct(taxa)) %>%
+  # pull() %>%
+  # paste("Total richness:", .)
+
+
 ```
 
 ## Richness by site
@@ -203,6 +259,14 @@ ggsave('../plots/richness_year.png', plot = richness_year_plot,
        width = 9, height = 6, dpi = 300)
 
 richness_year_plot
+```
+
+## *Review 5:*
+
+```{r}
+# The plot looks great! Consider also useing facet_wrap() to split up the diffent sites. I could see some people seeing the combined one you made as jumbled. You could also then more easily put something like a trend line showing the mean abundance over time
+
+
 ```
 
 ## Coefficient of variation
@@ -344,4 +408,25 @@ ggsave('../plots/rel_ab_tuzi.png', plot = tuzi_plot,
        width = 9, height = 6, dpi = 300)
 
 tuzi_plot
+```
+
+## *Review 6:*
+
+```{r}
+#I think it would be worth putting a more descriptive title for each one of your final plots for each park. Writing out the full name and then what the graph is showing. So even just "The Relative abundance of aquatic macroinvertebrates at  Tumacácori National Historical Park". This way each graph stands on its own. Alternatively, if your put all these graphs up next to eachotehr, lets say on a poster, you could make one overarching title and then leave the full names of the parks above each.
+```
+
+## *Review 7:*
+
+```{r}
+#I think it would be worth putting a more descriptive title for each one of your final plots for each park. Writing out the full name and then what the graph is showing. So even just "The Relative abundance of aquatic macroinvertebrates at  Tumacácori National Historical Park". This way each graph stands on its own. Alternatively, if your put all these graphs up next to each other, lets say on a poster, you could make one overarching title and then leave the full names of the parks above each.
+
+
+
+```
+
+## *Review 8:*
+
+```{r}
+#Overall this entire script is really well done. It is so clear and concise. I was easily able to follow it and I felt like you almost always took the most efficient path to get everthig done. I loved your graphs and the way they looked. I feel like if you were to present these finding at a talk or on a posted they would pop and the audience would have no trouble understanding them.
 ```
